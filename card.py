@@ -91,9 +91,6 @@ def halloween():
     goto(-125, -180)
     write("Happy Halloween", font=("Arial", 25, "bold"))
 
-def hanukkah():
-    print("Happy Hanukkah")
-
 def new_year():
     hideturtle()
 
