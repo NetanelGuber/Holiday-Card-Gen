@@ -121,5 +121,68 @@ def new_year():
     goto(-210, -180)
     write("Happy New Year", font=("Arial", 42, "bold"))
 
-halloween()
+def birthday():
+    hideturtle()
+
+    speed(0)
+
+    window = turtle.Screen()
+    window.bgcolor("#69D9FF")
+
+    num = 0
+    num2 = 0
+    a = randint(-450, 450)
+    b = randint(-400, 400)
+
+    colors = ["blue", "yellow", "orange", "green", "red", "purple", "white", "pink"]
+    chosen_color = choice(colors)
+
+    # stars
+    while num < 50:
+        draw_star(turtle, chosen_color, a, b, 10)
+        a = randint(-450, 450)
+        b = randint(-400, 400)
+        chosen_color = choice(colors)
+        num += 1
+
+    # plate
+    draw_rectangle(turtle, "white", -275, -205, 560, 25)
+
+    # cake
+    draw_round_rectangle(turtle, "#84563c", -250, -180, 530, 75, 10)
+    draw_round_rectangle(turtle, "#F3E5AB", -225, -105, 475, 75, 10)
+    draw_round_rectangle(turtle, "#84563c", -200, -30, 425, 75, 10)
+
+    # candles
+    red_fire = -182
+    orange_fire = -177
+    yellow_fire = -172
+
+    candle = -165
+
+    turtle.setheading(270)
+
+    while num2 < 5:
+        draw_rectangle(turtle, "white", candle, 120, 75, 15)
+        draw_egg(turtle, "red", red_fire, 135, 25, 0)
+        draw_egg(turtle, "orange", orange_fire, 130, 20, 0)
+        draw_egg(turtle, "yellow", yellow_fire, 125, 15, 0)
+
+        candle += 80
+
+        red_fire += 80
+        orange_fire += 80
+        yellow_fire += 80
+
+        num2 += 1
+
+    turtle.setheading(0)
+
+    penup()
+    color("black")
+    goto(-210, -275)
+    write("Happy Birthday!", font=("Arial", 42, "bold"))
+    
+
+birthday()
 input(" ")
