@@ -183,6 +183,144 @@ def birthday():
     goto(-210, -275)
     write("Happy Birthday!", font=("Arial", 42, "bold"))
     
+def mothers_day():
 
-birthday()
+    num = 0
+
+    a = randint(-450, 450)
+    b = randint(-400, 400)
+
+    hideturtle()
+
+    speed(0)
+
+    window = turtle.Screen()
+    window.bgcolor("#69D9FF")
+
+    def flower():
+        # Set initial position
+        turtle.penup()
+        turtle.left (90)
+        turtle.fd (200)
+        turtle.pendown ()
+        turtle.right (90)
+
+        # flower base
+        turtle.fillcolor ("red")
+        turtle.begin_fill ()
+        turtle.circle (10,180)
+        turtle.circle (25,110)
+        turtle.left (50)
+        turtle.circle (60,45)
+        turtle.circle (20,170)
+        turtle.right (24)
+        turtle.fd (30)
+        turtle.left (10)
+        turtle.circle (30,110)
+        turtle.fd (20)
+        turtle.left (40)
+        turtle.circle (90,70)
+        turtle.circle (30,150)
+        turtle.right (30)
+        turtle.fd (15)
+        turtle.circle (80,90)
+        turtle.left (15)
+        turtle.fd (45)
+        turtle.right (165)
+        turtle.fd (20)
+        turtle.left (155)
+        turtle.circle (150,80)
+        turtle.left (50)
+        turtle.circle (150,90)
+        turtle.end_fill ()
+
+        # Petal 1
+        turtle.left (150)
+        turtle.circle (-90,70)
+        turtle.left (20)
+        turtle.circle (75,105)
+        turtle.setheading (60)
+        turtle.circle (80,98)
+        turtle.circle (-90,40)
+
+        # Petal 2
+        turtle.left (180)
+        turtle.circle (90,40)
+        turtle.circle (-80,98)
+        turtle.setheading (-83)
+
+        # Leaves 1
+        turtle.fd (30)
+        turtle.left (90)
+        turtle.fd (25)
+        turtle.left (45)
+        turtle.fillcolor ("green")
+        turtle.begin_fill ()
+        turtle.circle (-80,90)
+        turtle.right (90)
+        turtle.circle (-80,90)
+        turtle.end_fill ()
+        turtle.right (135)
+        turtle.fd (60)
+        turtle.left (180)
+        turtle.fd (85)
+        turtle.left (90)
+        turtle.fd (80)
+
+        # Leaves 2
+        turtle.right (90)
+        turtle.right (45)
+        turtle.fillcolor ("green")
+        turtle.begin_fill ()
+        turtle.circle (80,90)
+        turtle.left (90)
+        turtle.circle (80,90)
+        turtle.end_fill ()
+        turtle.left (135)
+        turtle.fd (60)
+        turtle.left (180)
+        turtle.fd (60)
+        turtle.right (90)
+        turtle.circle (200,60)
+
+    colors = ["blue", "yellow", "orange", "green", "red", "purple", "white", "pink"]
+    chosen_color = choice(colors)
+
+    # stars
+    while num < 25:
+        draw_star(turtle, chosen_color, a, b, 10)
+        a = randint(-450, 450)
+        b = randint(-400, 400)
+        chosen_color = choice(colors)
+        num += 1
+
+    penup()
+    goto(0, 0)
+
+    flower()
+
+    penup()
+
+    color("black")
+    goto(-250, -300)
+    write("Happy Mothers day!", font=("Arial", 42, "bold"))
+
+def main():
+    choice = input("Which one would you like to do (birthday, new year, halloween, chrismas, mothers day)? ").lower()
+
+    if choice == "birthday":
+        birthday()
+    elif choice == "new year":
+        new_year()
+    elif choice == "halloween":
+        halloween()
+    elif choice == "chrismas":
+        chrismas()
+    elif choice == "mothers day":
+        mothers_day()
+    else:
+        print("That wasnt one of the options")
+        main()
+
+main()
 input(" ")
