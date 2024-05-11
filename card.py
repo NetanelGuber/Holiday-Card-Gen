@@ -303,7 +303,7 @@ def mothers_day():
 
     color("black")
     goto(-250, -300)
-    write("Happy Mothers day!", font=("Arial", 42, "bold"))
+    write("Happy Mothers Day!", font=("Arial", 42, "bold"))
 
 def main():
     choice = input("Which one would you like to do (birthday, new year, halloween, chrismas, mothers day)? ").lower()
